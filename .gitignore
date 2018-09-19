@@ -4,3 +4,4 @@
 **/*.vspscc
 **/*.vssscc
 **/*.user
+/packages
