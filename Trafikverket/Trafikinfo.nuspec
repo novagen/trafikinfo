@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Trafikinfo</id>
+    <version>1.0.0</version>
+    <title>Trafikverket Trafikinfo API</title>
+    <authors>Novagen</authors>
+    <owners>Novagen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Wrapper for Trafikverket Trafikinfo API, built in C#</description>
+    <tags>trafikverket trafikinfo api</tags>
+	<projectUrl>https://github.com/Novagen/trafikinfo</projectUrl>
+  </metadata>
+</package>
