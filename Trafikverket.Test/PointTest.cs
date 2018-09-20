@@ -4,7 +4,7 @@ using System.Text;
 using Trafikverket.Data;
 using Xunit;
 
-namespace Trafikverket.Tests
+namespace Trafikverket.Test
 {
 	public class PointTest
 	{
