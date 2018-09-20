@@ -8,7 +8,7 @@ namespace Trafikverket.Transfer
 		[JsonProperty("RESPONSE")]
 		public Response Response { get; set; }
 
-		public bool IsError()
+		public bool HasError()
 		{
 			if (Response?.Result == null || !Response.Result.Any()) return false;
 			return Response.Result.First().Error != null;
