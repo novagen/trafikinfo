@@ -59,7 +59,7 @@
   <ItemGroup>
     <Compile Include="PointTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrafikinfoTest.cs" />
+    <Compile Include="RequestTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trafikverket\Trafikverket.csproj">
