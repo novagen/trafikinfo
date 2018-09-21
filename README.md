@@ -2,6 +2,7 @@
 [![License][License-Image]][License-Url]
 [![Build Status][Build-Status-Image]][Build-Status-Url]
 [![NuGet][Nuget-Image]][Nuget-Url]
+[![CodeFactor][CodeFactor-Image]][CodeFactor-Url]
 
 C# library to fetch data from Trafikverket Trafikinfo API.
 
@@ -40,3 +41,5 @@ The following dependencies are used.
 [Nuget-Image]: https://img.shields.io/nuget/v/Trafikinfo.svg
 [MightyLittleGeodesy]: https://github.com/bjornsallarp/MightyLittleGeodesy
 [JsonNET]: https://www.newtonsoft.com/json
+[CodeFactor-Url]: https://www.codefactor.io/repository/github/novagen/trafikinfo
+[CodeFactor-Image]: https://www.codefactor.io/repository/github/novagen/trafikinfo/badge
