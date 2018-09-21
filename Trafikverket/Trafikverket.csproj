@@ -9,12 +9,15 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Trafikverket</RootNamespace>
     <AssemblyName>Trafikverket</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MightyLittleGeodesy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MightyLittleGeodesy.1.0.1\lib\net45\MightyLittleGeodesy.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -68,6 +74,9 @@
     <Compile Include="EventArgs\FailureEventArgs.cs" />
     <Compile Include="Road\FerryAnnouncement.cs" />
     <Compile Include="Road\FerryRoute.cs" />
+    <Compile Include="Transfer\Filter.cs" />
+    <Compile Include="Transfer\FilterGroup.cs" />
+    <Compile Include="Transfer\FilterOperator.cs" />
     <Compile Include="Transfer\Info.cs" />
     <Compile Include="Transfer\Error.cs" />
     <Compile Include="Data\Location.cs" />
@@ -80,6 +89,8 @@
     <Compile Include="Data\Measurement.cs" />
     <Compile Include="Data\MeasurementHistory.cs" />
     <Compile Include="Data\Precipitation.cs" />
+    <Compile Include="Transfer\Login.cs" />
+    <Compile Include="Transfer\Query.cs" />
     <Compile Include="Transfer\QueryResponse.cs" />
     <Compile Include="Transfer\Request.cs" />
     <Compile Include="Transfer\Response.cs" />

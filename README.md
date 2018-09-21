@@ -1,4 +1,42 @@
-[![Build Status](https://travis-ci.com/novagen/trafikinfo.svg?branch=master)](https://travis-ci.com/novagen/trafikinfo)
+# Trafikinfo
+[![License][License-Image]][License-Url]
+[![Build Status][Build-Status-Image]][Build-Status-Url]
+[![NuGet][Nuget-Image]][Nuget-Url]
 
-# trafikinfo
-C# library to fetch data from Trafikverket Trafikinfo API
+C# library to fetch data from Trafikverket Trafikinfo API.
+
+This is not an official library from Trafikverket.
+
+You can find more information about the [API here](https://api.trafikinfo.trafikverket.se/API)
+
+## Installation
+`PM> Install-Package Trafikinfo`
+
+## Example
+Fetch information about Stockholm Central station.
+
+```csharp
+using(var api = new Trafikinfo(new Configuration { Key = "yoursecretkey", Referer = "https://www.yourdomain.com" }))
+{
+    var request = new Request();
+    request.AddQuery(new Query(ObjectType.TrainStation));
+    request.Queries[0].Filter.AddOperator(new FilterOperator(OperatorType.Equals, "LocationSignature", "cst"));
+
+    var response = api.Request(request);
+}
+```
+
+## Dependencies
+The following dependencies are used.
+
+- [Json.NET][JsonNET]
+- [MightyLittleGeodesy][MightyLittleGeodesy]
+
+[License-Url]: http://opensource.org/licenses/MIT
+[License-Image]: https://img.shields.io/badge/License-MIT-blue.svg
+[Build-Status-Url]: https://travis-ci.com/novagen/trafikinfo
+[Build-Status-Image]: https://travis-ci.com/novagen/trafikinfo.svg?branch=master
+[Nuget-Url]: https://www.nuget.org/packages/trafikinfo
+[Nuget-Image]: https://img.shields.io/nuget/v/Trafikinfo.svg
+[MightyLittleGeodesy]: https://github.com/bjornsallarp/MightyLittleGeodesy
+[JsonNET]: https://www.newtonsoft.com/json
