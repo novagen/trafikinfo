@@ -7,13 +7,13 @@ namespace Trafikverket.Tests
 	[TestFixture]
 	public class RequestTest
 	{
-		private static readonly string _apiKey = "";
-		private static readonly string _apiReferer = "";
-
 		[Test]
 		public void RequestStation()
 		{
-			using (var api = new Trafikinfo(new Configuration { Key = _apiKey, Referer = _apiReferer }))
+			var apiKey = TestContext.Parameters["apiKey"];
+			var apiReferer = TestContext.Parameters["apiReferer"];
+
+			using (var api = new Trafikinfo(new Configuration { Key = apiKey, Referer = apiReferer }))
 			{
 				var request = new Request();
 				request.AddQuery(new Query(ObjectType.TrainStation));
