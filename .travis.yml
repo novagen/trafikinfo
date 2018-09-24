@@ -3,9 +3,7 @@ solution: Trafikinfo.sln
 install:
   - nuget restore Trafikinfo.sln
   - nuget install NUnit.Runners -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Release Trafikinfo.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params=apiKey=$API_KEY;apiReferer=$API_REFERER
+script: chmod +x ./deploy/test.sh && ./deploy/test.sh $API_KEY $API_REFERER
 deploy:
   skip_cleanup: true
   provider: script
