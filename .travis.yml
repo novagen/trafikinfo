@@ -1,5 +1,11 @@
 language: csharp
 solution: Trafikinfo.sln
+install:
+  - nuget restore Trafikinfo.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release Trafikinfo.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll
 deploy:
   skip_cleanup: true
   provider: script

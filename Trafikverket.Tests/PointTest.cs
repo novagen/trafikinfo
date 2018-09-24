@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using Trafikverket.Data;
-using Xunit;
+using NUnit.Framework;
 
-namespace Trafikverket.Test
+namespace Trafikverket.Tests
 {
+	[TestFixture]
 	public class PointTest
 	{
-		[Fact]
+		[Test]
 		public void GetPointFromSweref()
 		{
 			var geo = new Geometry { Sweref99Tm = "POINT (570452.99 6953233.9)" };
@@ -19,7 +20,7 @@ namespace Trafikverket.Test
 			Assert.True(expected.Equals(point));
 		}
 
-		[Fact]
+		[Test]
 		public void GetPointFromWgs()
 		{
 			var geo = new Geometry { Wgs84 = "POINT (16.3770065 62.7028427)" };
@@ -30,7 +31,7 @@ namespace Trafikverket.Test
 			Assert.True(expected.Equals(point));
 		}
 
-		[Fact]
+		[Test]
 		public void GetPointFromGeometry()
 		{
 			var geo = new Geometry { Sweref99Tm = "POINT (570452.99 6953233.9)" };
@@ -41,7 +42,7 @@ namespace Trafikverket.Test
 			Assert.True(expected.Equals(point));
 		}
 
-		[Fact]
+		[Test]
 		public void GetClosest()
 		{
 			var points = new List<Point>

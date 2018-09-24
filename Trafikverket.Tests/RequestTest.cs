@@ -1,15 +1,16 @@
+using NUnit.Framework;
 using System;
 using Trafikverket.Transfer;
-using Xunit;
 
-namespace Trafikverket.Test
+namespace Trafikverket.Tests
 {
+	[TestFixture]
 	public class RequestTest
 	{
 		private static readonly string _apiKey = "";
 		private static readonly string _apiReferer = "";
 
-		[Fact]
+		[Test]
 		public void RequestStation()
 		{
 			using (var api = new Trafikinfo(new Configuration { Key = _apiKey, Referer = _apiReferer }))
