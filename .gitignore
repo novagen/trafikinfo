@@ -5,3 +5,4 @@
 **/*.vssscc
 **/*.user
 /packages
+**/TestResult.xml

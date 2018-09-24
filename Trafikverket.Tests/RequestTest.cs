@@ -10,10 +10,10 @@ namespace Trafikverket.Tests
 		[Test]
 		public void RequestStation()
 		{
-			var apiKey = TestContext.Parameters["apiKey"];
-			var apiReferer = TestContext.Parameters["apiReferer"];
+			var apiKey = TestContext.Parameters.Get("apiKey");
+			var apiReferer = TestContext.Parameters.Get("apiReferer");
 
-			using (var api = new Trafikinfo(new Configuration { Key = apiKey, Referer = apiReferer }))
+			using (var api = new Trafikinfo(new Configuration { Key = apiKey.Trim(), Referer = apiReferer.Trim() }))
 			{
 				var request = new Request();
 				request.AddQuery(new Query(ObjectType.TrainStation));
