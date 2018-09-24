@@ -2,10 +2,10 @@ language: csharp
 solution: Trafikinfo.sln
 install:
   - nuget restore Trafikinfo.sln
-  - nuget install NUnit.Runners -Version 3.9.0 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release Trafikinfo.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit-console.exe ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params=apiKey=$API_KEY;apiReferer=$API_REFERER
+  - mono ./testrunner/NUnit.ConsoleRunner.*/tools/nunit3-console.exe ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params=apiKey=$API_KEY;apiReferer=$API_REFERER
 deploy:
   skip_cleanup: true
   provider: script
