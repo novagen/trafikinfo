@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Trafikverket.Data;
 using NUnit.Framework;
 
@@ -17,7 +15,8 @@ namespace Trafikverket.Tests
 
 			var expected = new Point(570452.99d, 6953233.9d);
 
-			Assert.True(expected.Equals(point));
+			Assert.AreEqual(expected.Latitude, point.Latitude);
+			Assert.AreEqual(expected.Longitude, point.Longitude);
 		}
 
 		[Test]
@@ -28,7 +27,8 @@ namespace Trafikverket.Tests
 
 			var expected = new Point(570452.992d, 6953233.903d);
 
-			Assert.True(expected.Equals(point));
+			Assert.AreEqual(expected.Latitude, point.Latitude);
+			Assert.AreEqual(expected.Longitude, point.Longitude);
 		}
 
 		[Test]
@@ -39,7 +39,8 @@ namespace Trafikverket.Tests
 
 			var expected = new Point(570452.99d, 6953233.9d);
 
-			Assert.True(expected.Equals(point));
+			Assert.AreEqual(expected.Latitude, point.Latitude);
+			Assert.AreEqual(expected.Longitude, point.Longitude);
 		}
 
 		[Test]
@@ -59,7 +60,8 @@ namespace Trafikverket.Tests
 
 			var expected = Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (785909.97 7092019.94)" });
 
-			Assert.True(expected.Equals(closest));
+			Assert.AreEqual(expected.Latitude, closest.Latitude);
+			Assert.AreEqual(expected.Longitude, closest.Longitude);
 		}
 	}
 }
