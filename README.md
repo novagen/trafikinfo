@@ -33,6 +33,8 @@ The following dependencies are used.
 - [Json.NET][JsonNET]
 - [MightyLittleGeodesy][MightyLittleGeodesy]
 
+Tests are using [NUnit][NUnit-Url]
+
 [License-Url]: http://opensource.org/licenses/MIT
 [License-Image]: https://img.shields.io/badge/License-MIT-blue.svg
 [Build-Status-Url]: https://travis-ci.com/novagen/trafikinfo
@@ -43,3 +45,4 @@ The following dependencies are used.
 [JsonNET]: https://www.newtonsoft.com/json
 [CodeFactor-Url]: https://www.codefactor.io/repository/github/novagen/trafikinfo
 [CodeFactor-Image]: https://www.codefactor.io/repository/github/novagen/trafikinfo/badge
+[NUnit-Url]: https://nunit.org/
