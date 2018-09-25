@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 
+#pragma warning disable CC0021 // Use nameof suppressed
+
 namespace Trafikverket
 {
 	public enum ObjectType

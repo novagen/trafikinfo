@@ -1,5 +1,9 @@
 language: csharp
 solution: Trafikinfo.sln
+install:
+  - nuget restore Trafikinfo.sln
+  - nuget install NUnit.Runners -OutputDirectory testrunner
+script: chmod +x ./deploy/test.sh && ./deploy/test.sh $API_KEY $API_REFERER
 deploy:
   skip_cleanup: true
   provider: script
