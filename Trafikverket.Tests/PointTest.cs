@@ -84,7 +84,6 @@ namespace Trafikverket.Tests
 			return Point.GetClosest(points, closestTo);
 		}
 
-
 		[Test]
 		public void GetClosestLat()
 		{
@@ -102,6 +101,5 @@ namespace Trafikverket.Tests
 
 			Assert.AreEqual(e.Longitude, point.Longitude, 0.01d);
 		}
-
 	}
 }
