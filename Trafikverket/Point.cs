@@ -1,7 +1,9 @@
 ﻿using MightyLittleGeodesy.Positions;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Trafikverket.Data;
 
 namespace Trafikverket
@@ -10,6 +12,8 @@ namespace Trafikverket
 	{
 		public double Longitude { get; private set; }
 		public double Latitude { get; private set; }
+
+		private static readonly Regex regex = new Regex("^POINT \\(([0-9.]+) ([0-9.]+)\\)$");
 
 		public Point(double longitude, double latitude)
 		{
@@ -21,15 +25,7 @@ namespace Trafikverket
 		{
 			if (!string.IsNullOrWhiteSpace(geo.Sweref99Tm))
 			{
-				var data = geo.Sweref99Tm.Replace("POINT (", "").Replace(")", "").Split(' ');
-
-				if (data != null)
-				{
-					if (double.TryParse(data[0].Replace('.', ','), out double x) && double.TryParse(data[1].Replace('.', ','), out double y))
-					{
-						return new Point(x, y);
-					}
-				}
+				return PointFromString(geo.Sweref99Tm);
 			}
 
 			return null;
@@ -39,15 +35,11 @@ namespace Trafikverket
 		{
 			if (!string.IsNullOrWhiteSpace(geo.Wgs84))
 			{
-				var data = geo.Wgs84.Replace("POINT (", "").Replace(")", "").Split(' ');
+				var point = PointFromString(geo.Wgs84);
+				var wgsPos = new WGS84Position(point.Latitude, point.Longitude);
+				var rtPos = new SWEREF99Position(wgsPos, SWEREF99Position.SWEREFProjection.sweref_99_tm);
 
-				if (data != null && double.TryParse(data[0].Replace('.', ','), out double x) && double.TryParse(data[1].Replace('.', ','), out double y))
-				{
-					var wgsPos = new WGS84Position(y, x);
-					var rtPos = new SWEREF99Position(wgsPos, SWEREF99Position.SWEREFProjection.sweref_99_tm);
-
-					return new Point(rtPos.Longitude, rtPos.Latitude);
-				}
+				return new Point(rtPos.Longitude, rtPos.Latitude);
 			}
 
 			return null;
@@ -107,6 +99,30 @@ namespace Trafikverket
 			}
 
 			return false;
+		}
+
+		private static Point PointFromString(string values)
+		{
+			if (!string.IsNullOrWhiteSpace(values))
+			{
+				var match = regex.Match(values.ToUpper());
+				if (match.Success && match.Groups.Count > 2)
+				{
+					return new Point(DoubleFromString(match.Groups[1].Value), DoubleFromString(match.Groups[2].Value));
+				}
+			}
+
+			return null;
+		}
+
+		private static double DoubleFromString(string value)
+		{
+			if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double result))
+			{
+				return result;
+			}
+
+			throw new Exception("Unable to convert string to double");
 		}
 	}
 }
