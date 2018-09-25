@@ -6,12 +6,18 @@ namespace Trafikverket.Tests
 	[TestFixture]
 	public class RequestTest
 	{
+		private readonly string apiKey;
+		private readonly string apiReferer;
+
+		public RequestTest()
+		{
+			apiKey = TestContext.Parameters.Get(nameof(apiKey));
+			apiReferer = TestContext.Parameters.Get(nameof(apiReferer));
+		}
+
 		[Test]
 		public void RequestStation()
 		{
-			var apiKey = TestContext.Parameters.Get("apiKey");
-			var apiReferer = TestContext.Parameters.Get("apiReferer");
-
 			using (var api = new Trafikinfo(new Configuration { Key = apiKey.Trim(), Referer = apiReferer.Trim() }))
 			{
 				var request = new Request();
