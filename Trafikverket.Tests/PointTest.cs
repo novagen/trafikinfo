@@ -1,50 +1,75 @@
-﻿using System.Collections.Generic;
+﻿using NUnit.Framework;
+using System.Collections.Generic;
 using Trafikverket.Data;
-using NUnit.Framework;
 
 namespace Trafikverket.Tests
 {
 	[TestFixture]
 	public class PointTest
 	{
-		[Test]
-		public void GetPointFromSweref()
+		private static readonly Point expected = new Point(570452.99d, 6953233.9d);
+
+		private static Point GetPointFromSweref()
 		{
 			var geo = new Geometry { Sweref99Tm = "POINT (570452.99 6953233.9)" };
-			var point = Point.GetPointFromSweref(geo);
-
-			var expected = new Point(570452.99d, 6953233.9d);
-
-			Assert.AreEqual(expected.Latitude, point.Latitude);
-			Assert.AreEqual(expected.Longitude, point.Longitude);
+			return Point.GetPointFromSweref(geo);
 		}
 
 		[Test]
-		public void GetPointFromWgs()
+		public void GetPointFromSwerefLat()
+		{
+			var point = GetPointFromSweref();
+			Assert.AreEqual(expected.Latitude, point.Latitude, 0.01d);
+		}
+
+		[Test]
+		public void GetPointFromSwerefLng()
+		{
+			var point = GetPointFromSweref();
+			Assert.AreEqual(expected.Longitude, point.Longitude, 0.01d);
+		}
+
+		private static Point GetPointFromWgs()
 		{
 			var geo = new Geometry { Wgs84 = "POINT (16.3770065 62.7028427)" };
-			var point = Point.GetPointFromWgs(geo);
-
-			var expected = new Point(570452.992d, 6953233.903d);
-
-			Assert.AreEqual(expected.Latitude, point.Latitude);
-			Assert.AreEqual(expected.Longitude, point.Longitude);
+			return Point.GetPointFromWgs(geo);
 		}
 
 		[Test]
-		public void GetPointFromGeometry()
+		public void GetPointFromWgsLat()
+		{
+			var point = GetPointFromWgs();
+			Assert.AreEqual(expected.Latitude, point.Latitude, 0.01d);
+		}
+
+		[Test]
+		public void GetPointFromWgsLng()
+		{
+			var point = GetPointFromWgs();
+			Assert.AreEqual(expected.Longitude, point.Longitude, 0.01d);
+		}
+
+		public static Point GetPointFromGeometry()
 		{
 			var geo = new Geometry { Sweref99Tm = "POINT (570452.99 6953233.9)" };
-			var point = Point.GetPointFromGeometry(geo);
-
-			var expected = new Point(570452.99d, 6953233.9d);
-
-			Assert.AreEqual(expected.Latitude, point.Latitude);
-			Assert.AreEqual(expected.Longitude, point.Longitude);
+			return Point.GetPointFromGeometry(geo);
 		}
 
 		[Test]
-		public void GetClosest()
+		public void GetPointFromGeometryLat()
+		{
+			var point = GetPointFromGeometry();
+			Assert.AreEqual(expected.Latitude, point.Latitude, 0.01d);
+		}
+
+		[Test]
+		public void GetPointFromGeometryLng()
+		{
+			var point = GetPointFromGeometry();
+			Assert.AreEqual(expected.Longitude, point.Longitude, 0.01d);
+		}
+
+		public static Point GetClosest()
 		{
 			var points = new List<Point>
 			{
@@ -55,13 +80,28 @@ namespace Trafikverket.Tests
 				Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (461668.98 6432526.84)" })
 			};
 
-			var point = Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (570452.99 6953233.9)" });
-			var closest = Point.GetClosest(points, point);
-
-			var expected = Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (785909.97 7092019.94)" });
-
-			Assert.AreEqual(expected.Latitude, closest.Latitude);
-			Assert.AreEqual(expected.Longitude, closest.Longitude);
+			var closestTo = Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (570452.99 6953233.9)" });
+			return Point.GetClosest(points, closestTo);
 		}
+
+
+		[Test]
+		public void GetClosestLat()
+		{
+			var point = GetClosest();
+			var e = Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (785909.97 7092019.94)" });
+
+			Assert.AreEqual(e.Latitude, point.Latitude, 0.01d);
+		}
+
+		[Test]
+		public void GetClosestLng()
+		{
+			var point = GetClosest();
+			var e = Point.GetPointFromSweref(new Geometry { Sweref99Tm = "POINT (785909.97 7092019.94)" });
+
+			Assert.AreEqual(e.Longitude, point.Longitude, 0.01d);
+		}
+
 	}
 }

@@ -112,6 +112,7 @@
     <Compile Include="Data\Wind.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Util\NumberHelper.cs" />
     <Compile Include="Util\Utils.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

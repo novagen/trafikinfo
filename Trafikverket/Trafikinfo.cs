@@ -160,8 +160,9 @@ namespace Trafikverket
 			}
 		}
 
-		~Trafikinfo() {
-		   Dispose(false);
+		~Trafikinfo()
+		{
+			Dispose(false);
 		}
 
 		public void Dispose()
