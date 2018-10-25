@@ -6,7 +6,7 @@
 
 C# library to fetch data from Trafikverket Trafikinfo API.
 
-This is not an official library from Trafikverket.
+This is **not** an official library from Trafikverket.
 
 You can find more information about the [API here](https://api.trafikinfo.trafikverket.se/API)
 
@@ -33,7 +33,10 @@ The following dependencies are used.
 - [Json.NET][JsonNET]
 - [MightyLittleGeodesy][MightyLittleGeodesy]
 
+## Tests
 Tests are using [NUnit][NUnit-Url]
+
+There is an example .runsettings included. Copy it to .runsettings and add your API-key in it. You can get a key at [Trafikverket](https://api.trafikinfo.trafikverket.se/).
 
 [License-Url]: http://opensource.org/licenses/MIT
 [License-Image]: https://img.shields.io/badge/License-MIT-blue.svg

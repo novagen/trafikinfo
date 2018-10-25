@@ -6,3 +6,6 @@
 **/*.user
 /packages
 **/TestResult.xml
+**/TestResults
+/.vscode
+**/.runsettings

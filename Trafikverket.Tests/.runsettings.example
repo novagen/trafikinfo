@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name ="apiKey" value="YOUR_API_KEY" />
+		<Parameter name ="apiReferer" value="C# Test" />
+	</TestRunParameters>
+</RunSettings>
