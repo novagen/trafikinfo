@@ -1,9 +1,9 @@
 using NUnit.Framework;
-using Trafikverket.Transfer;
+using Apparent.Trafikverket.Transfer;
 
-namespace Trafikverket.Tests
+namespace Apparent.Trafikverket.Tests
 {
-	[TestFixture]
+	[TestFixture, Category(nameof(RequestTest))]
 	public class RequestTest
 	{
 		private readonly string apiKey;

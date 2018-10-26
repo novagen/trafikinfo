@@ -1,6 +1,6 @@
-﻿using Trafikverket.EventArgs;
+﻿using Apparent.Trafikverket.EventArgs;
 
-namespace Trafikverket
+namespace Apparent.Trafikverket
 {
 	public delegate void FailureEventHandler(object sender, FailureEventArgs e);
 

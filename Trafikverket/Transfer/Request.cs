@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace Trafikverket.Transfer
+namespace Apparent.Trafikverket.Transfer
 {
+	/// <summary>
+	/// Request is used for all calls to the API.
+	/// </summary>
 	public class Request
 	{
 		public Login Login { get; set; }
@@ -18,12 +21,22 @@ namespace Trafikverket.Transfer
 			Queries = new List<Query>();
 		}
 
+		/// <summary>
+		/// Add a query to the request.
+		/// Each query will result in a Result in the Response.
+		/// </summary>
+		/// <param name="query"></param>
+		/// <returns></returns>
 		public Request AddQuery(Query query)
 		{
 			Queries.Add(query);
 			return this;
 		}
 
+		/// <summary>
+		/// Generates the XML used in the API call.
+		/// </summary>
+		/// <returns></returns>
 		public string Build()
 		{
 			var builder = new System.Text.StringBuilder();

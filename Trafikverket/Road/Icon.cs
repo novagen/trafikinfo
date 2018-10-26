@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using Trafikverket.Util;
+using Apparent.Trafikverket.Util;
 
-namespace Trafikverket.Road
+namespace Apparent.Trafikverket.Road
 {
 	public class Icon
 	{

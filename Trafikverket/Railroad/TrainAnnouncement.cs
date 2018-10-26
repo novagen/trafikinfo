@@ -1,7 +1,7 @@
 ﻿using System;
-using Trafikverket.Data;
+using Apparent.Trafikverket.Data;
 
-namespace Trafikverket.Railroad
+namespace Apparent.Trafikverket.Railroad
 {
 	public class TrainAnnouncement
 	{

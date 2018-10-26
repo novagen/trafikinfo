@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Trafikverket.Util
+namespace Apparent.Trafikverket.Util
 {
 	public static class NumberHelper
 	{

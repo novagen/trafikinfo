@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Trafikverket.Data;
+using Apparent.Trafikverket.Data;
 
-namespace Trafikverket.Railroad
+namespace Apparent.Trafikverket.Railroad
 {
 	public class TrainMessage
 	{

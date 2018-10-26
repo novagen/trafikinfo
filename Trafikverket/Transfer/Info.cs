@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace Trafikverket.Transfer
+namespace Apparent.Trafikverket.Transfer
 {
 	public class Info
 	{

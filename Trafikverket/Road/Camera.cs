@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using Trafikverket.Data;
-using Trafikverket.Util;
+using Apparent.Trafikverket.Data;
+using Apparent.Trafikverket.Util;
 
-namespace Trafikverket.Road
+namespace Apparent.Trafikverket.Road
 {
 	public class Camera
 	{

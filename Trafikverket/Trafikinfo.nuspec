@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
-    <id>Trafikinfo</id>
-    <version>1.0.3</version>
+    <id>Apparent.Trafikinfo</id>
+    <version>1.0.0</version>
     <title>Trafikverket Trafikinfo API</title>
     <authors>Novagen</authors>
     <owners>Novagen</owners>
@@ -16,6 +16,6 @@
 	</dependencies>
   </metadata>
   <files>
-	<file src="bin\Release\Trafikverket.dll" target="lib\net46" />
+	<file src="bin\Release\Apparent.Trafikverket.dll" target="lib\net46" />
   </files>
 </package>

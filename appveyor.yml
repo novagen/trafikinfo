@@ -1,0 +1,19 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+environment:
+  API_KEY:
+    secure: Y0OfgaclSKT8DN0lXoZR9J0hvyTWzzqa6xsu7slKsxXAvzUCklZCpzSUpA3UguaB
+  API_REFERER: apparent_build_test
+  NUGET_API_KEY:
+    secure: 7KCehmZUD3npnbFKKm/YvtqA1vo3d0q1f6jy1+P9rBhnj2cJACoKNBf9cwcYZYOB
+  NUGET_SOURCE: https://api.nuget.org/v3/index.json
+before_build:
+- cmd: nuget restore
+build:
+  verbosity: minimal
+test:
+  categories:
+    except:
+    - RequestTest
+# test_script:
+# - ps: nunit3-console ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params apiKey=$env:API_KEY --params apiReferer=$env:API_REFERER --result=myresults.xml;format=AppVeyor

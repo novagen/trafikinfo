@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using Trafikverket.Data;
+using Apparent.Trafikverket.Data;
 
-namespace Trafikverket.Road
+namespace Apparent.Trafikverket.Road
 {
 	public class RoadCondition
 	{
