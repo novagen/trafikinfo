@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
-using Trafikverket.Data;
+using Apparent.Trafikverket.Data;
 
-namespace Trafikverket.Tests
+namespace Apparent.Trafikverket.Tests
 {
 	[TestFixture]
 	public class PointTest

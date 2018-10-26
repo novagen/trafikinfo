@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Trafikverket.Util;
+using Apparent.Trafikverket.Util;
 
-namespace Trafikverket.Transfer
+namespace Apparent.Trafikverket.Transfer
 {
 	public class FilterGroup
 	{

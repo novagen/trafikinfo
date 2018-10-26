@@ -2,7 +2,7 @@
 
 #pragma warning disable CC0021 // Use nameof suppressed
 
-namespace Trafikverket
+namespace Apparent.Trafikverket
 {
 	public enum ObjectType
 	{

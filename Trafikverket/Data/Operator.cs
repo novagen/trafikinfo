@@ -1,4 +1,4 @@
-﻿namespace Trafikverket.Data
+﻿namespace Apparent.Trafikverket.Data
 {
 	public class Operator
 	{

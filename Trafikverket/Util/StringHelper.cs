@@ -1,4 +1,4 @@
-﻿namespace Trafikverket.Util
+﻿namespace Apparent.Trafikverket.Util
 {
 	public static class StringHelper
 	{

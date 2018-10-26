@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using Trafikverket.Transfer;
+using Apparent.Trafikverket.Transfer;
 
-namespace Trafikverket.Tests
+namespace Apparent.Trafikverket.Tests
 {
 	[TestFixture]
 	public class RequestTest

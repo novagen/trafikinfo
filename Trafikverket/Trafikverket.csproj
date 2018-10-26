@@ -7,8 +7,8 @@
     <ProjectGuid>{733087BB-0EB5-48E6-B6E5-4E1386AA4320}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Trafikverket</RootNamespace>
-    <AssemblyName>Trafikverket</AssemblyName>
+    <RootNamespace>Apparent.Trafikverket</RootNamespace>
+    <AssemblyName>Apparent.Trafikverket</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

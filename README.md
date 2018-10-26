@@ -42,8 +42,8 @@ There is an example .runsettings included. Copy it to .runsettings and add your 
 [License-Image]: https://img.shields.io/badge/License-MIT-blue.svg
 [Build-Status-Url]: https://travis-ci.com/novagen/trafikinfo
 [Build-Status-Image]: https://travis-ci.com/novagen/trafikinfo.svg?branch=master
-[Nuget-Url]: https://www.nuget.org/packages/trafikinfo
-[Nuget-Image]: https://img.shields.io/nuget/v/Trafikinfo.svg
+[Nuget-Url]: https://www.nuget.org/packages/apparent.trafikinfo
+[Nuget-Image]: https://img.shields.io/nuget/v/Apparent.Trafikinfo.svg
 [MightyLittleGeodesy]: https://github.com/bjornsallarp/MightyLittleGeodesy
 [JsonNET]: https://www.newtonsoft.com/json
 [CodeFactor-Url]: https://www.codefactor.io/repository/github/novagen/trafikinfo

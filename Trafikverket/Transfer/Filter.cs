@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Trafikverket.Transfer
+namespace Apparent.Trafikverket.Transfer
 {
 	public class Filter
 	{

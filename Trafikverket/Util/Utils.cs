@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using Trafikverket.Transfer;
+using Apparent.Trafikverket.Transfer;
 
-namespace Trafikverket.Util
+namespace Apparent.Trafikverket.Util
 {
 	public static class Utils
 	{

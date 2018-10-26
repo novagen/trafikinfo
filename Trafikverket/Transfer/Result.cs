@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Trafikverket.Railroad;
-using Trafikverket.Road;
+using Apparent.Trafikverket.Railroad;
+using Apparent.Trafikverket.Road;
 
-namespace Trafikverket.Transfer
+namespace Apparent.Trafikverket.Transfer
 {
 	public class Result
 	{

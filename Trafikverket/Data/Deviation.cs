@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Trafikverket.Data
+namespace Apparent.Trafikverket.Data
 {
 	public class Deviation
 	{

@@ -3,12 +3,25 @@ using System;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Trafikverket.EventArgs;
-using Trafikverket.Transfer;
-using Trafikverket.Util;
+using Apparent.Trafikverket.EventArgs;
+using Apparent.Trafikverket.Transfer;
+using Apparent.Trafikverket.Util;
 
-namespace Trafikverket
+namespace Apparent.Trafikverket
 {
+	/// <summary>
+	/// The Trafikinfo class handles the communication with Trafikverkets Trafikinfo API.
+	/// </summary>
+	/// <example>
+	/// using(var api = new Trafikinfo(new Configuration { Key = "yoursecretkey", Referer = "https://www.yourdomain.com" }))
+	/// {
+	/// 	var request = new Request();
+	/// 	request.AddQuery(new Query(ObjectType.TrainStation));
+	/// 	request.Queries[0].Filter.AddOperator(new FilterOperator(OperatorType.Equals, "LocationSignature", "cst"));
+	///
+	/// 	var response = api.Request(request);
+	/// }
+	/// </example>
 	public class Trafikinfo : IDisposable
 	{
 		private static readonly Uri _address = new Uri("http://api.trafikinfo.trafikverket.se/v1.3/data.json");
@@ -21,7 +34,7 @@ namespace Trafikverket
 		public event ResponseEventHandler ResponseHandler;
 
 		/// <summary>
-		/// Called when an error occur
+		/// Called when an error occur.
 		/// </summary>
 		/// <param name="e"></param>
 		protected void OnFailureEvent(FailureEventArgs e)
@@ -30,7 +43,7 @@ namespace Trafikverket
 		}
 
 		/// <summary>
-		/// Called when an async result is returned
+		/// Called when an async result is returned.
 		/// </summary>
 		/// <param name="e"></param>
 		protected void OnResponseEvent(SuccessEventArgs e)
@@ -38,6 +51,10 @@ namespace Trafikverket
 			ResponseHandler?.Invoke(this, e);
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Trafikinfo`1"/> class.
+		/// </summary>
+		/// <param name="config"></param>
 		public Trafikinfo(Configuration config)
 		{
 			_configuration = config;
@@ -57,12 +74,12 @@ namespace Trafikverket
 		}
 
 		/// <summary>
-		/// Send a request asynchronously to Trafikverket API
-		/// A successful request will have the data delivered through the OnResponseEvent handler
-		/// Errors will be delivered through OnFailureEvent
+		/// Send a request asynchronously to Trafikverket API.
+		/// A successful request will have the data delivered through the OnResponseEvent handler.
+		/// Errors will be delivered through OnFailureEvent.
 		/// </summary>
 		/// <param name="request"></param>
-		/// <returns></returns>
+		/// <returns>Task<bool></returns>
 		public async Task<bool> RequestAsync(Request request)
 		{
 			SetLogin(ref request);
@@ -89,10 +106,10 @@ namespace Trafikverket
 		}
 
 		/// <summary>
-		/// Send a request to Trafikverket API
+		/// Send a request to Trafikverket API.
 		/// </summary>
 		/// <param name="request"></param>
-		/// <returns></returns>
+		/// <returns>Response</returns>
 		public Response Request(Request request)
 		{
 			SetLogin(ref request);

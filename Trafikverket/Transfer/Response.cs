@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Trafikverket.Transfer
+namespace Apparent.Trafikverket.Transfer
 {
 	public class Response
 	{

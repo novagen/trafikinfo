@@ -9,8 +9,8 @@
     <ProjectGuid>{776D59EA-E570-4660-831B-21BBEBAF95A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Trafikverket.Tests</RootNamespace>
-    <AssemblyName>Trafikverket.Tests</AssemblyName>
+    <RootNamespace>Apparent.Trafikverket.Tests</RootNamespace>
+    <AssemblyName>Apparent.Trafikverket.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

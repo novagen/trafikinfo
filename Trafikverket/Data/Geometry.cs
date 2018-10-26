@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Trafikverket.Data
+namespace Apparent.Trafikverket.Data
 {
 	public class Geometry
 	{

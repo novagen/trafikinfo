@@ -1,4 +1,4 @@
-﻿namespace Trafikverket
+﻿namespace Apparent.Trafikverket
 {
 	public class Configuration
 	{

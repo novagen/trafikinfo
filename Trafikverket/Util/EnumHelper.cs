@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Trafikverket.Util
+namespace Apparent.Trafikverket.Util
 {
 	public static class EnumHelper
 	{

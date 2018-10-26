@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Trafikverket.Data;
+using Apparent.Trafikverket.Data;
 
-namespace Trafikverket
+namespace Apparent.Trafikverket
 {
 	public class Point
 	{

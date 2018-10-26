@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Trafikverket
+namespace Apparent.Trafikverket
 {
 	public class AlphanumComparator : IComparer
 	{

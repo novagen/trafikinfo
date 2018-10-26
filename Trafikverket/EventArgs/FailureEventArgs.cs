@@ -1,6 +1,6 @@
-﻿using Trafikverket.Transfer;
+﻿using Apparent.Trafikverket.Transfer;
 
-namespace Trafikverket.EventArgs
+namespace Apparent.Trafikverket.EventArgs
 {
 	public class FailureEventArgs : System.EventArgs
 	{
