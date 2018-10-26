@@ -4,7 +4,7 @@ using Apparent.Trafikverket.Data;
 
 namespace Apparent.Trafikverket.Tests
 {
-	[TestFixture]
+	[TestFixture, Category(nameof(PointTest))]
 	public class PointTest
 	{
 		private static readonly Point expected = new Point(570452.99d, 6953233.9d);

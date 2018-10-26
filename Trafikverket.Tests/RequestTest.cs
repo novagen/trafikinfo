@@ -3,7 +3,7 @@ using Apparent.Trafikverket.Transfer;
 
 namespace Apparent.Trafikverket.Tests
 {
-	[TestFixture]
+	[TestFixture, Category(nameof(RequestTest))]
 	public class RequestTest
 	{
 		private readonly string apiKey;
