@@ -11,7 +11,9 @@ before_build:
 - cmd: nuget restore
 build:
   verbosity: minimal
-test_script:
-- ps: >-
-    echo "... env:API_REFERER: $env:API_REFERER"
-    nunit3-console ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params apiKey=$env:API_KEY --params apiReferer=$env:API_REFERER
+test:
+  categories:
+    except:
+    - Request
+# test_script:
+# - ps: nunit3-console ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params apiKey=$env:API_KEY --params apiReferer=$env:API_REFERER --result=myresults.xml;format=AppVeyor
