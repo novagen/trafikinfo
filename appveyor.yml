@@ -17,3 +17,7 @@ test:
     - RequestTest
 # test_script:
 # - ps: nunit3-console ./Trafikverket.Tests/bin/Release/Trafikverket.Tests.dll --params apiKey=$env:API_KEY --params apiReferer=$env:API_REFERER --result=myresults.xml;format=AppVeyor
+deploy:
+- provider: NuGet
+  api_key:
+    secure: 7KCehmZUD3npnbFKKm/YvtqA1vo3d0q1f6jy1+P9rBhnj2cJACoKNBf9cwcYZYOB
