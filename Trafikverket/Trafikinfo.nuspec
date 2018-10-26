@@ -16,6 +16,6 @@
 	</dependencies>
   </metadata>
   <files>
-	<file src="bin\Release\Trafikverket.dll" target="lib\net46" />
+	<file src="bin\Release\Apparent.Trafikverket.dll" target="lib\net46" />
   </files>
 </package>
