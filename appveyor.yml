@@ -1,6 +1,5 @@
 version: 1.0.{build}
 image: Visual Studio 2017
-publish_nuget: true
 pull_requests:  
   do_not_increment_build_number: true
 environment:
@@ -11,6 +10,7 @@ before_build:
 - cmd: nuget restore
 build:
   verbosity: minimal
+  publish_nuget: true
 test:
   categories:
     except:
