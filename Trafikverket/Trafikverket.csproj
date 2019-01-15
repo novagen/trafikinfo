@@ -75,7 +75,6 @@
     <Compile Include="Data\Valid.cs" />
     <Compile Include="Data\WeekDay.cs" />
     <Compile Include="EventArgs\FailureEventArgs.cs" />
-    <Compile Include="FoodHabitAPI.cs" />
     <Compile Include="Road\FerryAnnouncement.cs" />
     <Compile Include="Road\FerryRoute.cs" />
     <Compile Include="Transfer\Filter.cs" />
